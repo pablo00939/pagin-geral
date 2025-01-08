@@ -57,6 +57,38 @@
         function comprar(producto) {
             alert("Has comprado un " + producto);
         }
+
+        let carrito = [];
+
+        // Función para agregar un producto al carrito
+        function agregarAlCarrito(producto) {
+            // Verificar si el producto ya está en el carrito
+            const existe = carrito.find(item => item.id === producto.id);
+
+            if (existe) {
+                // Si el producto ya existe, incrementar la cantidad
+                existe.cantidad += 1;
+            } else {
+                // Si no existe, agregar el producto al carrito
+                carrito.push({ ...producto, cantidad: 1 });
+            }
+
+            console.log(`${producto.nombre} ha sido agregado al carrito.`);
+        }
+
+        // Ejemplo de uso
+        const producto1 = { id: 1, nombre: 'Producto 1', precio: 100 };
+        agregarAlCarrito(producto1);
+
+        const producto2 = { id: 2, nombre: 'Producto 2', precio: 200 };
+        agregarAlCarrito(producto2);
+
+        // Agregar el mismo producto nuevamente
+        agregarAlCarrito(producto1);
+
+        // Mostrar el carrito
+        console.log(carrito);
+
     </script>
 </body>
 
