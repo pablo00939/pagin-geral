@@ -19,11 +19,19 @@
             <p>Precio: $25.00</p>
             <button onclick="comprar('Oso de Lana')">Comprar</button>
         </div>
+        <div class="carrito">
+            <h2>Carrito de Compras</h2>
+            <p id="cantidadCarrito">Cantidad: 0</p>
+        </div>
         <div class="product">
             <h2>desagrado</h2>
             <img class="d" src="img/desa.jpeg" alt="Peluche Conejo de Lana">
             <p>Precio: $20.00</p>
             <button onclick="comprar('Conejo de Lana')">Comprar</button>
+        </div>
+        <div class="carrito">
+            <h2>Carrito de Compras</h2>
+            <p id="cantidadCarrito">Cantidad: 0</p>
         </div>
         <div class="product">
             <h2>alegria</h2>
@@ -31,11 +39,19 @@
             <p>Precio: $20.00</p>
             <button onclick="comprar('Conejo de Lana')">Comprar</button>
         </div>
+        <div class="carrito">
+            <h2>Carrito de Compras</h2>
+            <p id="cantidadCarrito">Cantidad: 0</p>
+        </div>
         <div class="product">
             <h2>tristesa</h2>
             <img class="t" src="img/tristesa.jpeg" alt="Peluche Conejo de Lana">
             <p>Precio: $20.00</p>
             <button onclick="comprar('Conejo de Lana')">Comprar</button>
+        </div>
+        <div class="carrito">
+            <h2>Carrito de Compras</h2>
+            <p id="cantidadCarrito">Cantidad: 0</p>
         </div>
         <div class="product">
             <h2>kuromi</h2>
@@ -43,11 +59,19 @@
             <p>Precio: $20.00</p>
             <button onclick="comprar('Conejo de Lana')">Comprar</button>
         </div>
+        <div class="carrito">
+            <h2>Carrito de Compras</h2>
+            <p id="cantidadCarrito">Cantidad: 0</p>
+        </div>
         <div class="product">
             <h2>girasol</h2>
             <img class="g" src="img/girasol.jpeg" alt="Peluche Conejo de Lana">
             <p>Precio: $20.00</p>
             <button onclick="comprar('Conejo de Lana')">Comprar</button>
+        </div>
+        <div class="carrito">
+            <h2>Carrito de Compras</h2>
+            <p id="cantidadCarrito">Cantidad: 0</p>
         </div>
     </div>
     <footer>
@@ -57,38 +81,12 @@
         function comprar(producto) {
             alert("Has comprado un " + producto);
         }
+        let cantidad = 0;
 
-        let carrito = [];
-
-        // Función para agregar un producto al carrito
-        function agregarAlCarrito(producto) {
-            // Verificar si el producto ya está en el carrito
-            const existe = carrito.find(item => item.id === producto.id);
-
-            if (existe) {
-                // Si el producto ya existe, incrementar la cantidad
-                existe.cantidad += 1;
-            } else {
-                // Si no existe, agregar el producto al carrito
-                carrito.push({ ...producto, cantidad: 1 });
-            }
-
-            console.log(`${producto.nombre} ha sido agregado al carrito.`);
-        }
-
-        // Ejemplo de uso
-        const producto1 = { id: 1, nombre: 'Producto 1', precio: 100 };
-        agregarAlCarrito(producto1);
-
-        const producto2 = { id: 2, nombre: 'Producto 2', precio: 200 };
-        agregarAlCarrito(producto2);
-
-        // Agregar el mismo producto nuevamente
-        agregarAlCarrito(producto1);
-
-        // Mostrar el carrito
-        console.log(carrito);
-
+        document.getElementById('agregarCarrito').addEventListener('click', function () {
+            cantidad++;
+            document.getElementById('cantidadCarrito').innerText = 'Cantidad: ' + cantidad;
+        });
     </script>
 </body>
 

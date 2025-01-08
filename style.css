@@ -59,3 +59,17 @@ footer {
     width: 200px;
     height: 100px;
 }
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.producto {
+    margin-bottom: 20px;
+}
+
+.carrito {
+    margin-top: 40px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
